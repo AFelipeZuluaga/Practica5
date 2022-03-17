@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QPainter>
+#include <QKeyEvent>
 
 class pacman : public QObject, public QGraphicsItem
 {
@@ -22,6 +23,16 @@ public:
     float alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    //void keyPressEvent(QKeyEvent *ev);
+    //void keyReleaseEvent(QKeyEvent *ev);
+
+    //float orientacion();
+
+    bool moverIx1;
+    bool moverDx1;
+    bool moverUy1;
+    bool moverDy1;
+    bool mover2;
 
 
 signals:
