@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 miesfera* vectorBolas[240];
+esfera2* vectorBolas2[4];
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -1166,7 +1167,26 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
 
-    //Puntuación
+
+
+    //Bolas grandes
+
+
+    for(int i=0; i<2; i++){
+
+        vectorBolas2[i] = new esfera2();
+        scene->addItem(vectorBolas2[i]);
+        vectorBolas2[i]->setPos(25+740*(i),190);
+
+    }
+
+    for(int i=2; i<4; i++){
+
+        vectorBolas2[i] = new esfera2();
+        scene->addItem(vectorBolas2[i]);
+        vectorBolas2[i]->setPos(25+740*(i-2),535);
+
+    }
 
 
 }
@@ -1265,6 +1285,18 @@ void MainWindow::animar()
         {
             if(vectorBolas[i]->isVisible()){
                 vectorBolas[i]->hide();
+                aumentarPunt();
+                //delete bola;
+            }
+
+        }
+    }
+
+    for(int j=0; j<4; j++){
+    if(pcm->collidesWithItem(vectorBolas2[j]))
+        {
+            if(vectorBolas2[j]->isVisible()){
+                vectorBolas2[j]->hide();
                 aumentarPunt();
                 //delete bola;
             }

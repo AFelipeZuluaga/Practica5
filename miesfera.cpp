@@ -2,7 +2,6 @@
 
 miesfera::miesfera()
 {
-    vy=7;
 }
 
 QRectF miesfera::boundingRect() const
@@ -17,9 +16,4 @@ void miesfera::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     /*QPixmap pixmap;
     pixmap.load(":/Imagenes/pokebola.png");
     painter->drawPixmap(boundingRect(),pixmap,pixmap.rect());*/
-}
-
-void miesfera::choque()
-{
-    vy=-vy/1.3;
 }

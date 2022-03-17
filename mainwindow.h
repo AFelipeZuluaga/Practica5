@@ -20,6 +20,7 @@ using namespace std;
 #include "lineas.h"
 #include "pacman.h"
 #include <QPixmap>
+#include <esfera2.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -206,6 +207,7 @@ private:
     QGraphicsRectItem* barra162;
     QGraphicsRectItem* barra163;
     miesfera* bola;
+    esfera2* bola2;
     QTimer *timer;
     pacman *pcm;
     //QPixmap *mapa;
